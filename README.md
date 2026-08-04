@@ -12,3 +12,7 @@
 - The UI must be implemented in **SwiftUI**.
 
 ---
+
+## Test
+
+This is a test commit.

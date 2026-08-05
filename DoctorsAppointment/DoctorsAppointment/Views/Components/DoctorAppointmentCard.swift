@@ -15,7 +15,8 @@ struct DoctorAppointmentCard: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 120)
-                    .background(.womanBackground
+                    .background(
+                        .womanBackground
                     )
                     .clipShape(
                         .rect(
@@ -25,7 +26,7 @@ struct DoctorAppointmentCard: View {
                             topTrailingRadius: 24
                         )
                     )
-                VStack (alignment: .leading) {
+                VStack(alignment: .leading) {
                     Text("Radiant Hospital")
                         .foregroundStyle(.hospitalSectionBackground)
                         .bold()
@@ -35,6 +36,38 @@ struct DoctorAppointmentCard: View {
                 }
             }
             .padding(.top, 20)
+
+            HStack (spacing: 24){
+                VStack{
+                    HStack (spacing: 2){
+                        Image(.verified)
+                        Text("Verify")
+                            .bold()
+                    }
+                    Text("Certified")
+                }
+                
+                VStack{
+                    HStack (spacing: 2) {
+                        Image(.verified)
+                        Text("5 years")
+                            .bold()
+                    }
+                    Text("Experience")
+                }
+                
+                VStack{
+                    HStack (spacing: 2) {
+                        Image(.verified)
+                        Text("4.5")
+                            .bold()
+                    }
+                    Text("Rating")
+                }
+            }
+            .padding(16)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 24))
 
         }
         .frame(maxWidth: .infinity)

@@ -9,11 +9,20 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        UpcomingAppointmentsView()
+        ZStack {
+            Color(uiColor: .systemGray6)
+                .ignoresSafeArea()
+
+            ScrollView {
+                VStack {
+                    UpcomingAppointmentsView()
+                    AppointmentCard()
+                }
+            }
+        }
     }
 }
 
 #Preview {
     HomeView()
-    AppointmentCard()
 }

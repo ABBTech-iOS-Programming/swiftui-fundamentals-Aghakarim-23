@@ -37,27 +37,31 @@ struct DoctorAppointmentCard: View {
             }
             .padding(.top, 20)
 
-            HStack (spacing: 24){
-                VStack{
-                    HStack (spacing: 2){
+            HStack(spacing: 12) {
+                VStack {
+                    HStack(spacing: 2) {
                         Image(.verified)
                         Text("Verify")
                             .bold()
                     }
                     Text("Certified")
                 }
-                
-                VStack{
-                    HStack (spacing: 2) {
+
+                Image(.line)
+
+                VStack {
+                    HStack(spacing: 2) {
                         Image(.verified)
                         Text("5 years")
                             .bold()
                     }
                     Text("Experience")
                 }
-                
-                VStack{
-                    HStack (spacing: 2) {
+
+                Image(.line)
+
+                VStack {
+                    HStack(spacing: 2) {
                         Image(.verified)
                         Text("4.5")
                             .bold()
@@ -67,14 +71,42 @@ struct DoctorAppointmentCard: View {
             }
             .padding(16)
             .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 24))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+
+            HStack {
+                VStack {
+                    Text("Rp 240.000")
+                        .foregroundStyle(.red)
+                    Text("/hour")
+                }
+                Spacer()
+                Button {
+                    print("Button tapped")
+                } label: {
+                    Text("Book Now")
+                        .bold()
+                        .foregroundStyle(.hospitalSectionBackground)
+                        .frame(width: 180, height: 52)
+                        .background(.hospitalSectionBackground.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 26))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 26)
+                                .stroke(.hospitalSectionBackground, lineWidth: 1)
+                        }
+
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 20)
+            .padding(.bottom, 16)
 
         }
         .frame(maxWidth: .infinity)
-        .background(.gray)
-        .padding(.horizontal, 46)
         .clipShape(RoundedRectangle(cornerRadius: 24))
+        .padding(.top, 84)
+        .padding(.horizontal, 46)
     }
+    
 }
 
 #Preview {
